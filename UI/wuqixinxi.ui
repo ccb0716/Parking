@@ -1,0 +1,3148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>wuqixinxi</class>
+ <widget class="QMainWindow" name="wuqixinxi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>812</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1440</width>
+    <height>812</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1440</width>
+    <height>812</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>智能停车场数据管理系统</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="backgroung">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1440</width>
+      <height>812</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>1440</width>
+      <height>812</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1440</width>
+      <height>812</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../img/background.qrc">:/img/主界面背景.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>90</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>90</width>
+      <height>90</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>90</width>
+      <height>90</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../img/background.qrc">:/img/院徽.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>160</y>
+      <width>164</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="PushButton" name="zhgl">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">PushButton {
+    color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+	
+	background-image: url(:/img/背景.png);
+	
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+ 
+	font: 13pt &quot;黑体&quot;;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {
+    background: rgba(249, 249, 249, 0.5);
+}
+
+PushButton:pressed {
+    color: rgba(0, 0, 0, 0.63);
+	background-image: url(:/背景.png);
+    background: rgba(249, 249, 249, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.073);
+}
+
+PushButton:disabled  {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton,
+ {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+
+TransparentPushButton:hover,
+ {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+
+TransparentPushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+
+TransprentPushButton:disabled,
+ {
+    background-color: transparent;
+    border: none;
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>账户管理</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PushButton" name="wqtj">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">PushButton {
+    color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+	
+	background-image: url(:/img/背景.png);
+	
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+ 
+	font: 13pt &quot;黑体&quot;;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {
+    background: rgba(249, 249, 249, 0.5);
+}
+
+PushButton:pressed {
+    color: rgba(0, 0, 0, 0.63);
+	background-image: url(:/背景.png);
+    background: rgba(249, 249, 249, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.073);
+}
+
+PushButton:disabled  {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton,
+ {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+
+TransparentPushButton:hover,
+ {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+
+TransparentPushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+
+TransprentPushButton:disabled,
+ {
+    background-color: transparent;
+    border: none;
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>车位统计</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PushButton" name="crkgl">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">PushButton {
+    color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+	
+	background-image: url(:/img/背景.png);
+	
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+ 
+	font: 13pt &quot;黑体&quot;;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {
+    background: rgba(249, 249, 249, 0.5);
+}
+
+PushButton:pressed {
+    color: rgba(0, 0, 0, 0.63);
+	background-image: url(:/背景.png);
+    background: rgba(249, 249, 249, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.073);
+}
+
+PushButton:disabled  {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton,
+ {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+
+TransparentPushButton:hover,
+ {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+
+TransparentPushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+
+TransprentPushButton:disabled,
+ {
+    background-color: transparent;
+    border: none;
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>人工出入管理</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PushButton" name="qzxx">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">PushButton {
+    color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+	
+	background-image: url(:/img/背景.png);
+	
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+ 
+	font: 13pt &quot;黑体&quot;;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {
+    background: rgba(249, 249, 249, 0.5);
+}
+
+PushButton:pressed {
+    color: rgba(0, 0, 0, 0.63);
+	background-image: url(:/背景.png);
+    background: rgba(249, 249, 249, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.073);
+}
+
+PushButton:disabled  {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton,
+ {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+
+TransparentPushButton:hover,
+ {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+
+TransparentPushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+
+TransprentPushButton:disabled,
+ {
+    background-color: transparent;
+    border: none;
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>数据预览</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PushButton" name="whby">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">PushButton {
+    color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+	
+	background-image: url(:/img/背景.png);
+	
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+ 
+	font: 13pt &quot;黑体&quot;;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {
+    background: rgba(249, 249, 249, 0.5);
+}
+
+PushButton:pressed {
+    color: rgba(0, 0, 0, 0.63);
+	background-image: url(:/背景.png);
+    background: rgba(249, 249, 249, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.073);
+}
+
+PushButton:disabled  {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton,
+ {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+
+TransparentPushButton:hover,
+ {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+
+TransparentPushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+
+TransprentPushButton:disabled,
+ {
+    background-color: transparent;
+    border: none;
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>车场现状</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PushButton" name="qywqxx">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">PushButton {
+    color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+	
+	background-image: url(:/img/背景.png);
+	
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+ 
+	font: 13pt &quot;黑体&quot;;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {
+    background: rgba(249, 249, 249, 0.5);
+}
+
+PushButton:pressed {
+    color: rgba(0, 0, 0, 0.63);
+	background-image: url(:/背景.png);
+    background: rgba(249, 249, 249, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.073);
+}
+
+PushButton:disabled  {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton,
+ {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+
+TransparentPushButton:hover,
+ {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+
+TransparentPushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+
+TransprentPushButton:disabled,
+ {
+    background-color: transparent;
+    border: none;
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>数据分析</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PushButton" name="afgl">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">PushButton {
+    color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+	
+	background-image: url(:/img/背景.png);
+	
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+ 
+	font: 13pt &quot;黑体&quot;;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {
+    background: rgba(249, 249, 249, 0.5);
+}
+
+PushButton:pressed {
+    color: rgba(0, 0, 0, 0.63);
+	background-image: url(:/背景.png);
+    background: rgba(249, 249, 249, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.073);
+}
+
+PushButton:disabled  {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton,
+ {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+
+TransparentPushButton:hover,
+ {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+
+TransparentPushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+
+TransprentPushButton:disabled,
+ {
+    background-color: transparent;
+    border: none;
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>待定</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PushButton" name="PushButton_8">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">PushButton {
+    color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+	
+	background-image: url(:/img/背景.png);
+	
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+ 
+	font: 13pt &quot;黑体&quot;;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+
+PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+
+DropDownPushButton[hasIcon=false],
+PrimaryDropDownPushButton[hasIcon=false] {
+    padding: 5px 31px 6px 12px;
+}
+
+DropDownPushButton[hasIcon=true],
+PrimaryDropDownPushButton[hasIcon=true] {
+    padding: 5px 31px 6px 36px;
+}
+
+PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {
+    background: rgba(249, 249, 249, 0.5);
+}
+
+PushButton:pressed {
+    color: rgba(0, 0, 0, 0.63);
+	background-image: url(:/背景.png);
+    background: rgba(249, 249, 249, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.073);
+}
+
+PushButton:disabled  {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton,
+ {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+
+
+TransparentPushButton:hover,
+ {
+    background-color: rgba(0, 0, 0, 9);
+    border: none;
+}
+
+
+TransparentPushButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+
+
+TransprentPushButton:disabled,
+ {
+    background-color: transparent;
+    border: none;
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>退出</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+    <zorder>wqtj</zorder>
+    <zorder>qzxx</zorder>
+    <zorder>whby</zorder>
+    <zorder>qywqxx</zorder>
+    <zorder>afgl</zorder>
+    <zorder>PushButton_8</zorder>
+    <zorder>crkgl</zorder>
+    <zorder>zhgl</zorder>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>180</y>
+      <width>1221</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="currentIndex">
+     <number>5</number>
+    </property>
+    <widget class="QWidget" name="page_0">
+     <widget class="PasswordLineEdit" name="ps_3">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>190</y>
+        <width>191</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">LineEdit, TextEdit, PlainTextEdit {
+    color: white; /* 修改文本颜色为白色 */
+    background-color: transparent; /* 修改背景为透明 */
+    border: none; /* 移除边框以达到透明效果 */
+    /* border-bottom: 1px solid rgba(0, 0, 0, 100); 去掉底部边框 */
+    border-radius: 5px;
+    /* font: 14px &quot;Segoe UI&quot;, &quot;Microsoft YaHei&quot;; */
+    padding: 0px 10px;
+    selection-background-color: #00a7b3;
+}
+
+
+
+LineEdit:focus,
+TextEdit:focus,
+PlainTextEdit:focus {
+    border: none;
+    
+}
+
+/* 禁用状态的颜色也需要相应调整 */
+LineEdit:disabled, TextEdit:disabled,
+PlainTextEdit:disabled {
+    color: rgba(255, 255, 255, 0.5); /* 文本颜色调整为半透明白色 */
+    background-color: transparent;
+    border: none;
+}
+
+#lineEditButton {
+    background-color: transparent;
+    border-radius: 4px;
+    margin: 0;
+}
+
+#lineEditButton:hover {
+    background-color: rgba(0, 0, 0, 9);
+}
+
+#lineEditButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+}</string>
+      </property>
+     </widget>
+     <widget class="PrimaryPushButton" name="genggai">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>420</y>
+        <width>301</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>16</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+    /*背景颜色*/  
+	background-color:rgb(0, 127, 200);
+    /*字体颜色为白色*/    
+    color:rgb(255, 255, 255);
+	/*设置按键四角为圆角*/
+	border-radius :10px;
+      
+}	
+QPushButton:pressed
+{
+    
+    /*按下时字向右移动4像素*/  
+    padding-left:4px;
+    /*按下时字向下移动4像素*/  
+    padding-top:4px;
+}</string>
+      </property>
+      <property name="text">
+       <string>更改账户</string>
+      </property>
+     </widget>
+     <widget class="PasswordLineEdit" name="ps_1">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>340</y>
+        <width>191</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">LineEdit, TextEdit, PlainTextEdit {
+    color: white; /* 修改文本颜色为白色 */
+    background-color: transparent; /* 修改背景为透明 */
+    border: none; /* 移除边框以达到透明效果 */
+    /* border-bottom: 1px solid rgba(0, 0, 0, 100); 去掉底部边框 */
+    border-radius: 5px;
+    /* font: 14px &quot;Segoe UI&quot;, &quot;Microsoft YaHei&quot;; */
+    padding: 0px 10px;
+    selection-background-color: #00a7b3;
+}
+
+
+
+LineEdit:focus,
+TextEdit:focus,
+PlainTextEdit:focus {
+    border: none;
+    
+}
+
+/* 禁用状态的颜色也需要相应调整 */
+LineEdit:disabled, TextEdit:disabled,
+PlainTextEdit:disabled {
+    color: rgba(255, 255, 255, 0.5); /* 文本颜色调整为半透明白色 */
+    background-color: transparent;
+    border: none;
+}
+
+#lineEditButton {
+    background-color: transparent;
+    border-radius: 4px;
+    margin: 0;
+}
+
+#lineEditButton:hover {
+    background-color: rgba(0, 0, 0, 9);
+}
+
+#lineEditButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+}</string>
+      </property>
+     </widget>
+     <widget class="PasswordLineEdit" name="ps_2">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>290</y>
+        <width>191</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">LineEdit, TextEdit, PlainTextEdit {
+    color: white; /* 修改文本颜色为白色 */
+    background-color: transparent; /* 修改背景为透明 */
+    border: none; /* 移除边框以达到透明效果 */
+    /* border-bottom: 1px solid rgba(0, 0, 0, 100); 去掉底部边框 */
+    border-radius: 5px;
+    /* font: 14px &quot;Segoe UI&quot;, &quot;Microsoft YaHei&quot;; */
+    padding: 0px 10px;
+    selection-background-color: #00a7b3;
+}
+
+
+
+LineEdit:focus,
+TextEdit:focus,
+PlainTextEdit:focus {
+    border: none;
+    
+}
+
+/* 禁用状态的颜色也需要相应调整 */
+LineEdit:disabled, TextEdit:disabled,
+PlainTextEdit:disabled {
+    color: rgba(255, 255, 255, 0.5); /* 文本颜色调整为半透明白色 */
+    background-color: transparent;
+    border: none;
+}
+
+#lineEditButton {
+    background-color: transparent;
+    border-radius: 4px;
+    margin: 0;
+}
+
+#lineEditButton:hover {
+    background-color: rgba(0, 0, 0, 9);
+}
+
+#lineEditButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+}</string>
+      </property>
+     </widget>
+     <widget class="LineEdit" name="name_2">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>240</y>
+        <width>191</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">LineEdit, TextEdit, PlainTextEdit {
+    color: white; /* 修改文本颜色为白色 */
+    background-color: transparent; /* 修改背景为透明 */
+    border: none; /* 移除边框以达到透明效果 */
+    /* border-bottom: 1px solid rgba(0, 0, 0, 100); 去掉底部边框 */
+    border-radius: 5px;
+    /* font: 14px &quot;Segoe UI&quot;, &quot;Microsoft YaHei&quot;; */
+    padding: 0px 10px;
+    selection-background-color: #00a7b3;
+}
+
+
+
+LineEdit:focus,
+TextEdit:focus,
+PlainTextEdit:focus {
+    border: none;
+    
+}
+
+/* 禁用状态的颜色也需要相应调整 */
+LineEdit:disabled, TextEdit:disabled,
+PlainTextEdit:disabled {
+    color: rgba(255, 255, 255, 0.5); /* 文本颜色调整为半透明白色 */
+    background-color: transparent;
+    border: none;
+}
+
+#lineEditButton {
+    background-color: transparent;
+    border-radius: 4px;
+    margin: 0;
+}
+
+#lineEditButton:hover {
+    background-color: rgba(0, 0, 0, 9);
+}
+
+#lineEditButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+}</string>
+      </property>
+     </widget>
+     <widget class="LineEdit" name="name_1">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>140</y>
+        <width>191</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>11</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">LineEdit, TextEdit, PlainTextEdit {
+    color: white; /* 修改文本颜色为白色 */
+    background-color: transparent; /* 修改背景为透明 */
+    border: none; /* 移除边框以达到透明效果 */
+    /* border-bottom: 1px solid rgba(0, 0, 0, 100); 去掉底部边框 */
+    border-radius: 5px;
+    /* font: 14px &quot;Segoe UI&quot;, &quot;Microsoft YaHei&quot;; */
+    padding: 0px 10px;
+    selection-background-color: #00a7b3;
+}
+
+
+
+LineEdit:focus,
+TextEdit:focus,
+PlainTextEdit:focus {
+    border: none;
+    
+}
+
+/* 禁用状态的颜色也需要相应调整 */
+LineEdit:disabled, TextEdit:disabled,
+PlainTextEdit:disabled {
+    color: rgba(255, 255, 255, 0.5); /* 文本颜色调整为半透明白色 */
+    background-color: transparent;
+    border: none;
+}
+
+#lineEditButton {
+    background-color: transparent;
+    border-radius: 4px;
+    margin: 0;
+}
+
+#lineEditButton:hover {
+    background-color: rgba(0, 0, 0, 9);
+}
+
+#lineEditButton:pressed {
+    background-color: rgba(0, 0, 0, 6);
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1221</width>
+        <height>561</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/img/账号.png);</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="PushButton" name="zhuce">
+      <property name="geometry">
+       <rect>
+        <x>431</x>
+        <y>481</y>
+        <width>301</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>16</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+    /*背景颜色*/  
+	background-color:rgb(0, 127, 200);
+    /*字体颜色为白色*/    
+    color:rgb(255, 255, 255);
+	/*设置按键四角为圆角*/
+	border-radius :10px;
+      
+}	
+QPushButton:pressed
+{
+    
+    /*按下时字向右移动4像素*/  
+    padding-left:4px;
+    /*按下时字向下移动4像素*/  
+    padding-top:4px;
+}</string>
+      </property>
+      <property name="text">
+       <string>注    册</string>
+      </property>
+     </widget>
+     <zorder>label_2</zorder>
+     <zorder>ps_3</zorder>
+     <zorder>genggai</zorder>
+     <zorder>ps_1</zorder>
+     <zorder>ps_2</zorder>
+     <zorder>name_2</zorder>
+     <zorder>name_1</zorder>
+     <zorder>zhuce</zorder>
+    </widget>
+    <widget class="QWidget" name="page_1">
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>561</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../img/background.qrc">:/img/背景.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="TitleLabel" name="TitleLabel">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>70</y>
+        <width>124</width>
+        <height>38</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255, 255, 255, 200);</string>
+      </property>
+      <property name="text">
+       <string>车位概览</string>
+      </property>
+     </widget>
+     <widget class="SubtitleLabel" name="SubtitleLabel">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>170</y>
+        <width>221</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>总车位：</string>
+      </property>
+     </widget>
+     <widget class="SubtitleLabel" name="bq">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>340</y>
+        <width>141</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>剩余车位：</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>20</y>
+        <width>601</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../img/background.qrc">:/img/背景.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="SubtitleLabel" name="SubtitleLabel_4">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>250</y>
+        <width>181</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>占用车位：</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ImageLabel">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>70</y>
+        <width>500</width>
+        <height>400</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="PushButton" name="wqtj_2">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>470</y>
+        <width>162</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">PushButton {
+    color:rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+	
+	background-image: url(:/img/背景.png);
+	
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+ 
+	font: 13pt &quot;黑体&quot;;
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>车位统计</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>-10</y>
+        <width>611</width>
+        <height>591</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../img/background.qrc">:/img/背景.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>170</y>
+        <width>71</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(167, 173, 214);</string>
+      </property>
+      <property name="text">
+       <string>停车历史信息录入</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>40</y>
+        <width>311</width>
+        <height>381</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="5" column="2">
+        <widget class="LineEdit" name="editAddress_2"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_20">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>进入日期</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_23">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>驶出日期</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="ZhDatePicker" name="ZhDatePicker_3"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_22">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>驶出时间</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="TimePicker" name="TimePicker_2"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>星期</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_19">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>编号：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_21">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>进入时间</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="LineEdit" name="editID_2"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="ZhDatePicker" name="ZhDatePicker_2"/>
+       </item>
+       <item row="2" column="2">
+        <widget class="TimePicker" name="TimePicker"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="PushButton" name="luru">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>430</y>
+        <width>301</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>16</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+    /*背景颜色*/  
+	background-color:rgb(0, 127, 200);
+    /*字体颜色为白色*/    
+    color:rgb(255, 255, 255);
+	/*设置按键四角为圆角*/
+	border-radius :10px;
+      
+}	
+QPushButton:pressed
+{
+    
+    /*按下时字向右移动4像素*/  
+    padding-left:4px;
+    /*按下时字向下移动4像素*/  
+    padding-top:4px;
+}</string>
+      </property>
+      <property name="text">
+       <string>录    入</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>-10</y>
+        <width>611</width>
+        <height>591</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../img/background.qrc">:/img/背景.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>310</y>
+        <width>321</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="1" column="2">
+        <widget class="LineEdit" name="car_id_1"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_28">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>驶入时间</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_25">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>驶出时间</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2" colspan="2">
+        <widget class="LineEdit" name="out_time_1">
+         <property name="text">
+          <string>右侧获取时间</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_27">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>编号：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="4">
+        <widget class="PushButton" name="get_time_1">
+         <property name="text">
+          <string>获取</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="PushButton" name="sel_car">
+         <property name="text">
+          <string>搜索</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2" colspan="3">
+        <widget class="LineEdit" name="in_time_1"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="label_31">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>70</y>
+        <width>71</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(167, 173, 214);</string>
+      </property>
+      <property name="text">
+       <string>车辆驶入登记</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="PushButton" name="luru_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>490</y>
+        <width>301</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>16</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+    /*背景颜色*/  
+	background-color:rgb(0, 127, 200);
+    /*字体颜色为白色*/    
+    color:rgb(255, 255, 255);
+	/*设置按键四角为圆角*/
+	border-radius :10px;
+      
+}	
+QPushButton:pressed
+{
+    
+    /*按下时字向右移动4像素*/  
+    padding-left:4px;
+    /*按下时字向下移动4像素*/  
+    padding-top:4px;
+}</string>
+      </property>
+      <property name="text">
+       <string>获取当前时间</string>
+      </property>
+     </widget>
+     <widget class="PushButton" name="dengji_1">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>490</y>
+        <width>301</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>16</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+    /*背景颜色*/  
+	background-color:rgb(0, 127, 200);
+    /*字体颜色为白色*/    
+    color:rgb(255, 255, 255);
+	/*设置按键四角为圆角*/
+	border-radius :10px;
+      
+}	
+QPushButton:pressed
+{
+    
+    /*按下时字向右移动4像素*/  
+    padding-left:4px;
+    /*按下时字向下移动4像素*/  
+    padding-top:4px;
+}</string>
+      </property>
+      <property name="text">
+       <string>登      记</string>
+      </property>
+     </widget>
+     <widget class="PushButton" name="dengji">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>220</y>
+        <width>301</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>16</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+    /*背景颜色*/  
+	background-color:rgb(0, 127, 200);
+    /*字体颜色为白色*/    
+    color:rgb(255, 255, 255);
+	/*设置按键四角为圆角*/
+	border-radius :10px;
+      
+}	
+QPushButton:pressed
+{
+    
+    /*按下时字向右移动4像素*/  
+    padding-left:4px;
+    /*按下时字向下移动4像素*/  
+    padding-top:4px;
+}</string>
+      </property>
+      <property name="text">
+       <string>登      记</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_32">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>330</y>
+        <width>71</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(167, 173, 214);</string>
+      </property>
+      <property name="text">
+       <string>车辆驶出登记</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>60</y>
+        <width>321</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_30">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>驶入时间</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_29">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>编号：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="LineEdit" name="in_time">
+         <property name="text">
+          <string>右侧获取时间</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="PushButton" name="get_time">
+         <property name="text">
+          <string>获取</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="LineEdit" name="car_id"/>
+       </item>
+      </layout>
+     </widget>
+     <zorder>label_24</zorder>
+     <zorder>label_18</zorder>
+     <zorder>label_11</zorder>
+     <zorder>gridLayoutWidget</zorder>
+     <zorder>luru</zorder>
+     <zorder>gridLayoutWidget_2</zorder>
+     <zorder>label_31</zorder>
+     <zorder>luru_2</zorder>
+     <zorder>dengji_1</zorder>
+     <zorder>dengji</zorder>
+     <zorder>label_32</zorder>
+     <zorder>gridLayoutWidget_3</zorder>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>420</y>
+        <width>71</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(167, 173, 214);</string>
+      </property>
+      <property name="text">
+       <string>车辆信息</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>470</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>时段</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>420</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>车牌号：</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>470</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>停留时间</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>470</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>驶出时间</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>420</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>驶入时间</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>60</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>星期</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnEdit">
+      <property name="geometry">
+       <rect>
+        <x>910</x>
+        <y>60</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>修改</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnQuery">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>60</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>刷新</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>420</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>星期</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>60</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>时段</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-10</y>
+        <width>1161</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../img/background.qrc">:/img/背景.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="ComboBox" name="cboxClass">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>60</y>
+        <width>131</width>
+        <height>32</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="ComboBox" name="cboxGrade">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>60</y>
+        <width>121</width>
+        <height>32</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="LineEdit" name="editID">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>410</y>
+        <width>128</width>
+        <height>33</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="LineEdit" name="editAge">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>460</y>
+        <width>201</width>
+        <height>33</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="LineEdit" name="editPhone">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>460</y>
+        <width>111</width>
+        <height>33</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="LineEdit" name="editAddress">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>410</y>
+        <width>141</width>
+        <height>33</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="LineEdit" name="editID_5">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>110</y>
+        <width>128</width>
+        <height>33</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="PushButton" name="PushButton_21">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>100</y>
+        <width>931</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">PushButton {
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 15px;
+    /* font: 14px 'Segoe UI', 'Microsoft YaHei'; */
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+PushButton:disabled, {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+TransparentPushButton:pressed,
+{
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+TransprentPushButton:disabled,</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="TableWidget" name="wp_information_1">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>110</y>
+        <width>841</width>
+        <height>271</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="LineEdit" name="editName">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>410</y>
+        <width>201</width>
+        <height>33</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="LineEdit" name="cboxSex">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>460</y>
+        <width>141</width>
+        <height>33</height>
+       </rect>
+      </property>
+     </widget>
+     <zorder>editID_5</zorder>
+     <zorder>label_17</zorder>
+     <zorder>label_6</zorder>
+     <zorder>label_9</zorder>
+     <zorder>label_7</zorder>
+     <zorder>label_8</zorder>
+     <zorder>label_10</zorder>
+     <zorder>label_13</zorder>
+     <zorder>label_14</zorder>
+     <zorder>btnEdit</zorder>
+     <zorder>btnQuery</zorder>
+     <zorder>label_15</zorder>
+     <zorder>label_16</zorder>
+     <zorder>cboxClass</zorder>
+     <zorder>cboxGrade</zorder>
+     <zorder>editID</zorder>
+     <zorder>editAge</zorder>
+     <zorder>editPhone</zorder>
+     <zorder>editAddress</zorder>
+     <zorder>PushButton_21</zorder>
+     <zorder>wp_information_1</zorder>
+     <zorder>editName</zorder>
+     <zorder>cboxSex</zorder>
+    </widget>
+    <widget class="QWidget" name="page_4">
+     <widget class="SearchLineEdit" name="SearchLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>910</x>
+        <y>10</y>
+        <width>187</width>
+        <height>33</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="PushButton" name="PushButton">
+      <property name="geometry">
+       <rect>
+        <x>1110</x>
+        <y>10</y>
+        <width>102</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>搜索</string>
+      </property>
+     </widget>
+     <widget class="PushButton" name="search_1">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>50</y>
+        <width>81</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>查询</string>
+      </property>
+     </widget>
+     <widget class="PushButton" name="PushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>50</y>
+        <width>101</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">PushButton {
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+    /* font: 14px 'Segoe UI', 'Microsoft YaHei'; */
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+PushButton:disabled, {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+TransparentPushButton:pressed,
+{
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+TransprentPushButton:disabled,</string>
+      </property>
+      <property name="text">
+       <string>编号</string>
+      </property>
+     </widget>
+     <widget class="PushButton" name="PushButton_6">
+      <property name="geometry">
+       <rect>
+        <x>990</x>
+        <y>70</y>
+        <width>141</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">PushButton {
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+    /* font: 14px 'Segoe UI', 'Microsoft YaHei'; */
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+PushButton:disabled, {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+TransparentPushButton:pressed,
+{
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+TransprentPushButton:disabled,</string>
+      </property>
+      <property name="text">
+       <string>维护保养登记</string>
+      </property>
+     </widget>
+     <widget class="PushButton" name="PushButton_7">
+      <property name="geometry">
+       <rect>
+        <x>1010</x>
+        <y>480</y>
+        <width>121</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>录入</string>
+      </property>
+     </widget>
+     <widget class="PushButton" name="PushButton_9">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>60</y>
+        <width>321</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">PushButton {
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 15px;
+    /* font: 14px 'Segoe UI', 'Microsoft YaHei'; */
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+PushButton:disabled, {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+TransparentPushButton:pressed,
+{
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+TransprentPushButton:disabled,</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="PushButton" name="PushButton_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>871</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">PushButton {
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 15px;
+    /* font: 14px 'Segoe UI', 'Microsoft YaHei'; */
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+PushButton:disabled, {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+TransparentPushButton:pressed,
+{
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+TransprentPushButton:disabled,</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="ZhDatePicker" name="ZhDatePicker">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>360</y>
+        <width>240</width>
+        <height>30</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="LineEdit" name="locationID">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>50</y>
+        <width>141</width>
+        <height>33</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="PushButton" name="PushButton_11">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>310</y>
+        <width>91</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">PushButton {
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+    /* font: 14px 'Segoe UI', 'Microsoft YaHei'; */
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+PushButton:disabled, {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+TransparentPushButton:pressed,
+{
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+TransprentPushButton:disabled,</string>
+      </property>
+      <property name="text">
+       <string>日期</string>
+      </property>
+     </widget>
+     <widget class="PushButton" name="PushButton_12">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>210</y>
+        <width>91</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">PushButton {
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+    /* font: 14px 'Segoe UI', 'Microsoft YaHei'; */
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+PushButton:disabled, {
+    color: rgba(0, 0, 0, 0.36);
+    background: rgba(249, 249, 249, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+TransparentPushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+}
+TransparentPushButton:pressed,
+{
+    background-color: rgba(0, 0, 0, 6);
+    border: none;
+}
+TransprentPushButton:disabled,</string>
+      </property>
+      <property name="text">
+       <string>编号/柜号</string>
+      </property>
+     </widget>
+     <widget class="RadioButton" name="RadioButton">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>130</y>
+        <width>113</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>单个</string>
+      </property>
+     </widget>
+     <widget class="RadioButton" name="RadioButton_2">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>130</y>
+        <width>113</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>批量</string>
+      </property>
+     </widget>
+     <widget class="SearchLineEdit" name="SearchLineEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>260</y>
+        <width>241</width>
+        <height>33</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="TableWidget" name="TableWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>100</y>
+        <width>831</width>
+        <height>441</height>
+       </rect>
+      </property>
+     </widget>
+     <zorder>PushButton_10</zorder>
+     <zorder>PushButton_9</zorder>
+     <zorder>SearchLineEdit</zorder>
+     <zorder>PushButton</zorder>
+     <zorder>search_1</zorder>
+     <zorder>PushButton_4</zorder>
+     <zorder>PushButton_6</zorder>
+     <zorder>PushButton_7</zorder>
+     <zorder>ZhDatePicker</zorder>
+     <zorder>locationID</zorder>
+     <zorder>PushButton_11</zorder>
+     <zorder>PushButton_12</zorder>
+     <zorder>RadioButton</zorder>
+     <zorder>RadioButton_2</zorder>
+     <zorder>SearchLineEdit_2</zorder>
+     <zorder>TableWidget_3</zorder>
+    </widget>
+    <widget class="QWidget" name="page_5">
+     <widget class="QStackedWidget" name="stackedWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>20</y>
+        <width>991</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>5</number>
+      </property>
+      <widget class="QWidget" name="MT_0">
+       <widget class="QLabel" name="shijian_fenbu">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>800</width>
+          <height>500</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="MT_1">
+       <widget class="QLabel" name="zhoufanmang">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>800</width>
+          <height>500</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="MT_2">
+       <widget class="QLabel" name="fee">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>800</width>
+          <height>500</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="MT_3">
+       <widget class="QLabel" name="gaofeng">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>800</width>
+          <height>500</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="MT_4">
+       <widget class="QLabel" name="jiedaitj">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>800</width>
+          <height>500</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="QT_0">
+       <widget class="QWebEngineView" name="web_0" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>991</width>
+          <height>531</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="QT_1"/>
+     </widget>
+     <widget class="PushButton" name="PushButton_25">
+      <property name="geometry">
+       <rect>
+        <x>-2</x>
+        <y>1</y>
+        <width>1221</width>
+        <height>561</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">PushButton, ToolButton, ToggleButton, ToggleToolButton {
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.073);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+    /* font: 14px 'Segoe UI', 'Microsoft YaHei'; */
+    padding: 5px 12px 6px 12px;
+    outline: none;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>1020</x>
+        <y>20</y>
+        <width>160</width>
+        <height>511</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="PushButton" name="shijian_fenbu_2">
+         <property name="text">
+          <string>停车时间分布</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="PushButton" name="zhoufanmang_2">
+         <property name="text">
+          <string>周繁忙统计</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="PushButton" name="fee_2">
+         <property name="text">
+          <string>收入分析</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="PushButton" name="gaofeng_2">
+         <property name="text">
+          <string>停车时段统计</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="PushButton" name="jiedai">
+         <property name="text">
+          <string>接待车辆统计</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="PushButton" name="ciyun">
+         <property name="text">
+          <string>词云-web</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="PushButton" name="shiduan">
+         <property name="text">
+          <string>时段-web</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="PushButton" name="zonghe_2">
+         <property name="text">
+          <string>综合分析-web</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="PushButton" name="zonghe_3">
+         <property name="text">
+          <string>收入分析-web</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <zorder>PushButton_25</zorder>
+     <zorder>stackedWidget_2</zorder>
+     <zorder>verticalLayoutWidget</zorder>
+    </widget>
+    <widget class="QWidget" name="page_6">
+     <widget class="PillPushButton" name="PillPushButton">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>130</y>
+        <width>122</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Pill push button</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ComboBox</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PushButton</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PrimaryPushButton</class>
+   <extends>PushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PillPushButton</class>
+   <extends>ToggleButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>RadioButton</class>
+   <extends>QRadioButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>ToggleButton</class>
+   <extends>PushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>DatePicker</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>ZhDatePicker</class>
+   <extends>DatePicker</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>TimePicker</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>SubtitleLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>TitleLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>LineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>SearchLineEdit</class>
+   <extends>LineEdit</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PasswordLineEdit</class>
+   <extends>LineEdit</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>TableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>QWebEngineView</class>
+   <extends>QWidget</extends>
+   <header>PyQt5.QtWebEngineWidgets</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../img/background.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>PushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>wuqixinxi</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>702</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>103</x>
+     <y>838</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
