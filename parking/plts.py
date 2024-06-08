@@ -1,21 +1,8 @@
 import datetime
-
-from PyQt5.QtGui import QPixmap
 from matplotlib import pyplot as plt
 import parking.service as service
 from collections import Counter
 import numpy as np
-
-
-
-# 显示图像在指定的控件中
-def show_plot(file_path, control_name):
-    pixmap = QPixmap(file_path)  # 加载图像为 QPixmap
-    label =control_name  # 获取指定的控件对象
-    #label.setPixmap(QPixmap("clear.Visual"))
-    label.setPixmap(pixmap)  # 设置 QLabel 的 Pixmap
-    label.adjustSize()  # 调整 QLabel 大小以适应图像
-    label.setScaledContents(True)  # 让 QLabel 自适应图片大小
 def bing_tu( x, y,colors):#,c=0,d=0,e=0,f=0,g=0,h=0
     plt.rcParams['text.color'] = 'black'
 
@@ -93,7 +80,7 @@ def zhu_zhuangtu():
         plt.text(x, y + 20, str(y) + '台', ha='center')
     plt.savefig('./Visual/zhuzhuang_tu.png',dpi=300)
     plt.close('all')
-bing_tu_1()
+
 
 def fee_plt():#使用ax,而不是plt
     x=[]
@@ -148,14 +135,14 @@ def shiduan():
     plt.rcParams['font.family'] = 'SimHei'
     colors = plt.get_cmap('Blues')(np.linspace(0.2, 0.7, len(x)))
     fig, ax = plt.subplots(figsize=(8,5))
-    ax.set_title('停车时段分布', fontsize=12, fontfamily='SimHei')  # 图名
+    ax.set_title('停车时段分布', fontsize=12, fontfamily='SimHei',color="white")  # 图名
     ax.pie(y, colors=colors,
            labels=x,
-           wedgeprops={"linewidth": 1, "edgecolor": "white"},
+           wedgeprops={"linewidth": 1, },
            autopct='%1.1f%%',)
     ax.legend(loc =(-0.5,0))
 
-    plt.savefig('./Visual/shiduan.png', dpi=300)
+    plt.savefig('./Visual/shiduan.png', dpi=300,transparent=True)
     plt.close('all')
 def jiedai():
     x = []

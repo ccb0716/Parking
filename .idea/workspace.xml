@@ -4,7 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d76a76ef-f87b-49d4-ae76-a31750692f73" name="更改" comment="1.0.0" />
+    <list default="true" id="d76a76ef-f87b-49d4-ae76-a31750692f73" name="更改" comment="1.0.0">
+      <change afterPath="$PROJECT_DIR$/Visual/bar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/bing_tu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/ciyun.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/jiedai.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/liquid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/shiduan.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/yanzhengma.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/R-C.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bj2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bj3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bj4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/btn2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/院总.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/院文字.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgYanzhengma.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking/grid_vertical.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking/py_echarts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main_Mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_Mysql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main_sqlite.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_sqlite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/loginpage.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI/loginpage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/loginpage.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/loginpage.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/wuqixinxi.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI/wuqixinxi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/wuqixinxi.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/wuqixinxi.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/bing_tu_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/cc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/fee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/global_options_bar_chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/fee_web.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/shiduan.png" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/shiduan.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/zhuzhuang_tu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/car.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/car.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/background.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/img/background.qrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/background_rc.py" beforeDir="false" afterPath="$PROJECT_DIR$/img/background_rc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/主界面背景.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/主界面背景.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/校门.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/登录.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/背景.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/账号.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/date0.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/date0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/plts.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/plts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/test.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,11 +68,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Main_Mysql.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2gaLIlZADmmqMzw1OMKzqc3W0uD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,22 +88,26 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Python.Main_Mysql.executor": "Run",
     "Python.Main_sqlite.executor": "Run",
     "Python.a_main.executor": "Run",
+    "Python.code(1).executor": "Run",
     "Python.date.executor": "Run",
     "Python.date0.executor": "Run",
     "Python.plts.executor": "Run",
+    "Python.py_echarts.executor": "Debug",
     "Python.test.executor": "Run",
+    "Python.wuqixinxi.executor": "Run",
     "Python.停车场管理.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "master",
     "ignore_missing_gitignore": "true",
-    "last_opened_file_path": "D:/CCB/Code/Python/Parking_System - QT5",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+    "last_opened_file_path": "C:/ProgramData/anaconda3/envs/PYQT5/Scripts/pyuic5.exe",
+    "settings.editor.selected.configurable": "preferences.externalTools"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -55,12 +115,41 @@
       <recent name="D:\CCB\Code\Python\智能停车场数据管理系统\code" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CCB\Code\Python\Parking_System - QT5\Visual" />
       <recent name="D:\CCB\Code\Python\智能停车场数据管理系统\UI" />
       <recent name="D:\CCB\Code\Python\智能停车场数据管理系统\img" />
       <recent name="D:\CCB\Code\Python\智能停车场数据管理系统\" />
       <recent name="D:\CCB\Code\Python\智能停车场数据管理系统" />
-      <recent name="D:\CCB\Code\Python\智能停车场数据管理系统\code" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main_Mysql" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="智能停车场数据管理系统" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main_Mysql.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Main_Mysql" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -110,21 +199,57 @@
       <option name="project" value="LOCAL" />
       <updated>1716477699686</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1.0.0">
+      <option name="closed" value="true" />
+      <created>1717311352144</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717311352144</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="1.0.1" />
     <MESSAGE value="1.0.2" />
     <MESSAGE value="1.0.3" />

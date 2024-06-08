@@ -1,27 +1,39 @@
-from datetime import datetime
-import time
-from PyQt5 import QtWidgets
-from PyQt5.QtCore import QUrl
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem
 import parking.service as service
 import sys
+import time
 import img.background_rc
+from datetime import datetime
+
+from PyQt5 import QtWidgets
+from PyQt5.QtCore import QUrl, Qt
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem, QApplication
+
 import parking.date0 as date0
+import parking.py_echarts as py_echarts
 from UI.loginpage import Ui_loginpage
 from UI.wuqixinxi import Ui_wuqixinxi
-from parking.plts import bing_tu_1,bing_tu,zhu_zhuangtu,fee_plt,shiduan,jiedai
+from parking.plts import bing_tu_1,bing_tu,zhu_zhuangtu,fee_plt,shiduan
+
 # 有几个页面定义几个class!!!!!!
 class login_window(QtWidgets.QMainWindow, Ui_loginpage):  # 定义的loginpageh
     def __init__(self):
-        super().__init__()
-        self.setupUi(self)
+        super(login_window, self).__init__()
+        self.setupUi(self)  # 创建窗体对象
         self.init()
-        self.VerificationCode = "92390"
 
     def init(self):
         self.denglu.clicked.connect(self.login_button)  # 连接槽..
-
+        self.zhuce1.clicked.connect(self.zhuce1_button)
+        self.zhuce_1.clicked.connect(self.zhuce_1_button)
+        self.back_login.clicked.connect(self.back_login_button)
+        self.shuaxin.clicked.connect(self.shuaxin_button)
+    def shuaxin_button(self):
+        global VerificationCode
+        VerificationCode=date0.generate_captcha_image()
+        pixmap = QPixmap(r"Visual/yanzhengma.png")  # 创建相应的QPixmap对象
+        self.yanzhengma.setScaledContents(True)  # 设置铺满
+        self.yanzhengma.setPixmap(pixmap)  # 显示lena图像
     def login_button(self):
         service.userName = self.username.text()  # 全局变量，记录用户名
         self.userPwd = self.password.text()  # 记录用户密码
@@ -31,25 +43,26 @@ class login_window(QtWidgets.QMainWindow, Ui_loginpage):  # 定义的loginpageh
         if self.password.text() == "":
             QMessageBox.warning(self, '警告', '密码不能为空，请输入！')
             return None
-        if self.lineEdit_3.text() == "":
+        if self.lineEdit_4.text() == "":
             QMessageBox.warning(self, '警告', '验证码不能为空，请输入！')
             return None
         if service.userName != "" and self.userPwd != "":  # 判断用户名和密码不为空
             # 根据用户名和密码查询数据
             result = service.query("select * from id where name = %s and password= %s", service.userName,
                                    self.userPwd)
-            if len(result) > 0 and self.lineEdit_3.text() == self.VerificationCode:  # 如果查询结果大于0，说明存在该用户，可以登录
-                ww.show()  # 显示主窗体
+            if len(result) > 0 and self.lineEdit_4.text() == VerificationCode:  # 如果查询结果大于0，说明存在该用户，可以登录
+
+                ww.show()  # 显示登录窗体
                 w.close()  # 隐藏当前的登录窗体
             elif len(result) == 0:
                 QMessageBox.critical(self, '错误', '账号或密码错误！')
                 self.username.clear()
                 self.password.clear()
-                self.lineEdit_3.clear()
+                self.lineEdit_4.clear()
                 return None
-            elif self.lineEdit_3.text() != self.VerificationCode:
+            elif self.lineEdit_4.text() != VerificationCode:
                 QMessageBox.critical(self, '错误', '验证码错误！')
-                self.lineEdit_3.clear()
+                self.lineEdit_4.clear()
                 return None
             else:
                 QMessageBox.critical(self, '错误', '错误！')
@@ -58,14 +71,41 @@ class login_window(QtWidgets.QMainWindow, Ui_loginpage):  # 定义的loginpageh
                 self.lineEdit_3.clear()
                 return None
 
+    def zhuce_1_button(self):
+        result= service.query("select * from pro_user where pas=%s ", self.pro_Password.text())
+
+        if self.new_username.text()=="" or self.new_Password.text()=="" or self.pro_Password.text()=="" or self.new_Password_1.text()=="":
+            QMessageBox.warning(self, '警告', '信息不能为空，请输入！')
+            return None
+        elif len(self.new_Password.text()) < 6:
+            QMessageBox.warning(self, '警告', '密码长度不能小于6位，请重新输入！')
+            return None
+        elif self.new_Password_1.text() != self.new_Password.text():
+            QMessageBox.warning(self, '警告', '两次密码不一致，请重新输入！')
+            return None
+
+        elif len(result)==0:
+            QMessageBox.warning(self, '警告', '验证失败，请重新输入！')
+            self.pro_Password.clear()
+            return None
+        elif len(result)>0 :
+            service.exec("insert into id (name,password) values(%s,%s)",(self.new_username.text(),self.new_Password.text()))
+            QMessageBox.information(self, '提示', '注册成功！')
+    def zhuce1_button(self):
+        self.stackedWidget.setCurrentIndex(1)
+    def back_login_button(self):
+        self.stackedWidget.setCurrentIndex(0)
+
 
 
 
 class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
 
     def __init__(self):
-        super().__init__()
-        self.setupUi(self)
+        super(wuqixinxiwindow, self).__init__()
+
+        #self.showMaximized()
+        self.setupUi(self)  # 创建窗体对象
         self.init()
         #self.query()  # 窗体加载时显示所有数据
 
@@ -78,10 +118,11 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
 
 
 
-
         # 根据年级绑定班级列表
 
     def init(self):
+        self.query()  # 窗体加载时显示所有数据
+        self.query_1()
         self.zhgl.clicked.connect(self.zhgl_button)  # 连接槽
         self.wqtj.clicked.connect(self.wqtj_button)
         self.crkgl.clicked.connect(self.crkgl_button)
@@ -89,8 +130,7 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
         self.whby.clicked.connect(self.whby_button)
         self.qywqxx.clicked.connect(self.qywqxx_button)
         self.afgl.clicked.connect(self.afgl_button)
-        self.query()  # 窗体加载时显示所有数据
-        self.query_1()
+
         self.wp_information_1.itemClicked.connect(self.getItem)  # 获取选中的单元格数据
         self.genggai.clicked.connect(self.genggai_button)
         self.luru.clicked.connect(self.luru_button)
@@ -109,6 +149,10 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
         self.jiedai.clicked.connect(self.jiedai_button)
         self.zonghe_2.clicked.connect(self.zonghe_button)
         self.zonghe_3.clicked.connect(self.zonghe_3_button)
+        self.ciyun.clicked.connect(self.ciyun_button)
+        self.shiduan.clicked.connect(self.shiduan_button)
+
+
 
     def shijian_fenbu_button(self):
         self.stackedWidget_2.setCurrentIndex(0)
@@ -131,26 +175,63 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
         self.fee.setScaledContents(True)  # 设置铺满
         self.fee.setPixmap(pixmap)  # 显示lena图像
     def gaofeng_button(self):
-        self.stackedWidget_2.setCurrentIndex(3)
         shiduan()
-        pixmap = QPixmap(r"Visual/shiduan.png")  # 创建相应的QPixmap对象
-        self.gaofeng.setScaledContents(True)
-        self.gaofeng.setPixmap(pixmap)
+        import base64
+        with open("Visual/shiduan.png", "rb") as f:
+            encoded_image = base64.b64encode(f.read()).decode()
 
+        html = f"""
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="UTF-8">
+            <title>Local Image</title>
+            <style>
+              img {{
+                width: 100%;
+                height: auto;
+              }}
+            </style>
+          </head>
+          <body>
+            <img id="myImage" src="data:image/png;base64,{encoded_image}">
+            <script>
+              function resizeImage() {{
+                var image = document.getElementById('myImage');
+                var container = image.parentElement;
+                image.style.width = container.clientWidth + 'px';
+              }}
+              window.onload = resizeImage;
+              window.onresize = resizeImage;
+            </script>
+          </body>
+        </html>
+        """
+
+        self.web.setHtml(html)
 
     def jiedai_button(self):
-        self.stackedWidget_2.setCurrentIndex(4)
-        jiedai()
 
-        pixmap = QPixmap(r"Visual/cc.png")  # 创建相应的QPixmap对象
-        self.jiedaitj.setScaledContents(True)  # 设置铺满
-        self.jiedaitj.setPixmap(pixmap)  # 显示lena图像
+        py_echarts.map_0()
+        self.web.load(QUrl.fromLocalFile("/Visual/jiedai.html"))
+    def ciyun_button(self):
+
+        py_echarts.ciyun()
+        self.web.load(QUrl.fromLocalFile("/Visual/ciyun.html"))
+    def shiduan_button(self):
+
+        py_echarts.shiduan1()
+        self.web.load(QUrl.fromLocalFile("/Visual/shiduan.html"))
     def zonghe_button(self):
-        self.stackedWidget_2.setCurrentIndex(5)
-        self.web_0.load(QUrl.fromLocalFile("./Visual/global_options_bar_chart.html"))
+
+        py_echarts.line_bar()
+
+        self.web.load(QUrl.fromLocalFile("/Visual/bar.html"))
+
     def zonghe_3_button(self):
-        self.stackedWidget_2.setCurrentIndex(5)
-        self.web_0.load(QUrl.fromLocalFile("/Visual/global_options_bar_chart.html"))
+
+        py_echarts.pie_web()
+        self.web.load(QUrl.fromLocalFile("/Visual/fee_web.html"))
 
     def get_time_button(self):
         self.in_time.setText(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
@@ -244,18 +325,21 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
     def wqtj_button(self):
 
         self.stackedWidget.setCurrentIndex(1)
+        #self.widget.load(QUrl.fromLocalFile("/Visual/car_num.html"))
         result_0= service.query("select state from car where state=%s",0)
-        c = 100
+        c = 200
         b = c - len(result_0)
         a = len(result_0)
         self.SubtitleLabel.setText("总车位：" + str(c))
         self.SubtitleLabel_4.setText("占用车位："+str(a))
         self.bq.setText("剩余车位：" + str(b))
         bing_tu(["占用车位", "剩余车位"], [a, b], ['gold', 'lightskyblue'])
-        self.ImageLabel.setPixmap(QPixmap(""))
-        pixmap = QPixmap(r"Visual/bing_tu.png")  # 创建相应的QPixmap对象
-        self.ImageLabel.setScaledContents(True)  # 设置铺满
-        self.ImageLabel.setPixmap(pixmap)
+        py_echarts.car_use()
+        self.widget_21.load(QUrl.fromLocalFile("/Visual/liquid.html"))
+        #self.ImageLabel.setPixmap(QPixmap(""))
+        #pixmap = QPixmap(r"Visual/bing_tu.png")  # 创建相应的QPixmap对象
+        #self.ImageLabel.setScaledContents(True)  # 设置铺满
+        #self.ImageLabel.setPixmap(pixmap)
     def crkgl_button(self):
         self.stackedWidget.setCurrentIndex(2)
     def qzxx_button(self):
@@ -263,7 +347,9 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
         self.query()
     def whby_button(self):
         self.stackedWidget.setCurrentIndex(4)
-        self.query_1()
+        py_echarts.map_0()
+        self.web.load(QUrl.fromLocalFile("/Visual/jiedai.html"))
+
     def qywqxx_button(self):
         self.stackedWidget.setCurrentIndex(5)
     def afgl_button(self):
@@ -404,10 +490,13 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
             QMessageBox.warning(self, '警告', '修改失败！')
 
 
-
 if __name__ == '__main__':
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
     app = QtWidgets.QApplication(sys.argv)
     w = login_window()
     ww = wuqixinxiwindow()
+    ww.setWindowState(Qt.WindowMaximized)
     w.show()
     sys.exit(app.exec_())
+

@@ -5,22 +5,15 @@ def create_database_if_not_exists(cursor):
     cursor.execute("CREATE DATABASE IF NOT EXISTS car")
 
 def open():
-    try:
-        db = pymysql.connect(
+
+    db = pymysql.connect(
             host="localhost",
             user="root",
             password="Ccb165414.",
             database="car",
             charset="utf8"
         )  # 数据库连接
-        return db  # 返回连接对象
-    except Exception :
-        try:
-            cursor = db.cursor().cursor()#存在问题
-            create_database_if_not_exists(cursor)
-        except Exception  as e :
-            print(f"Error opening database connection: {e}")
-            return 1# 如果发生异常，返回1
+    return db  # 返回连接对象
 
 
 # 执行数据库的增、删、改操作

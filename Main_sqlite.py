@@ -399,6 +399,6 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     w = login_window()
     ww = wuqixinxiwindow()
-    w.show()
+    ww.show()
 
     sys.exit(app.exec_())

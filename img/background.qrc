@@ -1,10 +1,17 @@
 <RCC>
   <qresource prefix="img">
-    <file>登录.png</file>
+    <file>R-C.png</file>
+    <file>院总.png</file>
+    <file>院徽.png</file>
+    <file>院文字.png</file>
+    <file>bj3.png</file>
+    <file>bj4.png</file>
     <file>主界面背景.png</file>
-    <file>账号.png</file>
-    <file>校门.jpg</file>
-    <file>背景.png</file>
+    <file>bj2.png</file>
+    <file>bj.png</file>
+    <file>bk.png</file>
+    <file>btn2.png</file>
+    <file>bj.png</file>
     <file>院徽.png</file>
   </qresource>
 </RCC>
