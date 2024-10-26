@@ -46,12 +46,12 @@ def random_captcha_text(num):
     captcha_text = []
     for i in range(10):  # 0-9数字
         captcha_text.append(str(i))
-    for i in range(65, 91):  # 对应从“A”到“Z”的ASCII码
+    '''for i in range(65, 91):  # 对应从“A”到“Z”的ASCII码
         captcha_text.append(chr(i))
     for i in range(97, 123):  # 对应从“a”到“z”的ASCII码
-        captcha_text.append(chr(i))
+        captcha_text.append(chr(i))'''
 
-    # 从list中随机获取6个元素，作为一个片断返回
+    # 从list中随机获取n个元素，作为一个片断返回
     example = random.sample(captcha_text, num)
 
     # 将列表里的片段变为字符串并返回

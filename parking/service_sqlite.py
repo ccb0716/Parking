@@ -1,4 +1,5 @@
 import sqlite3
+userName="" # 记录用户名
 def open():
     try:
         db = sqlite3.connect("./db/car.db")  # 数据库连接

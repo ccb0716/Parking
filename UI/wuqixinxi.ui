@@ -14,7 +14,7 @@
    <string>智能停车场数据管理系统</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="C:/Users/CCB/Desktop/Desktop(2)/Desktop/img/background.qrc">
+   <iconset resource="../img/background.qrc">
     <normaloff>:/img/院徽.png</normaloff>:/img/院徽.png</iconset>
   </property>
   <property name="styleSheet">
@@ -91,7 +91,7 @@
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="C:/Users/CCB/Desktop/Desktop(2)/Desktop/img/background.qrc">:/img/院徽.png</pixmap>
+             <pixmap resource="../img/background.qrc">:/img/院徽.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -345,7 +345,7 @@ border:3px solid rgb(230, 232, 236);
              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
             </property>
             <property name="currentIndex">
-             <number>4</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="page_0">
              <property name="styleSheet">
@@ -3815,6 +3815,7 @@ QPushButton:pressed
   </customwidget>
  </customwidgets>
  <resources>
+  <include location="../img/background.qrc"/>
   <include location="C:/Users/CCB/Desktop/Desktop(2)/Desktop/img/background.qrc"/>
  </resources>
  <connections>

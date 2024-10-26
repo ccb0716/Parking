@@ -4,54 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d76a76ef-f87b-49d4-ae76-a31750692f73" name="更改" comment="1.0.0">
-      <change afterPath="$PROJECT_DIR$/Visual/bar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/bing_tu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/ciyun.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/jiedai.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/liquid.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/shiduan.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Visual/yanzhengma.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/R-C.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/bj.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/bj2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/bj3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/bj4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/bk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/btn2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/院总.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/院文字.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imgYanzhengma.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking/grid_vertical.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking/py_echarts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+    <list default="true" id="d76a76ef-f87b-49d4-ae76-a31750692f73" name="更改" comment="1.0.1">
+      <change afterPath="$PROJECT_DIR$/Visual/bing_tu_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/fee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Visual/zhuzhuang_tu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main_Mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_Mysql.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main_sqlite.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_sqlite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/loginpage.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI/loginpage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/loginpage.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/loginpage.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/wuqixinxi.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI/wuqixinxi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/wuqixinxi.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/wuqixinxi.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Visual/bing_tu_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Visual/cc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Visual/fee.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Visual/global_options_bar_chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/fee_web.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/bar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/bing_tu.png" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/bing_tu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/ciyun.html" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/ciyun.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/fee_web.html" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/fee_web.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/jiedai.html" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/jiedai.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/liquid.html" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/liquid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/shiduan.html" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/shiduan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Visual/shiduan.png" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/shiduan.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Visual/zhuzhuang_tu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/car.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/car.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/background.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/img/background.qrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/background_rc.py" beforeDir="false" afterPath="$PROJECT_DIR$/img/background_rc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/主界面背景.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/主界面背景.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/校门.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/登录.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/背景.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/账号.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visual/yanzhengma.png" beforeDir="false" afterPath="$PROJECT_DIR$/Visual/yanzhengma.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgYanzhengma.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/parking/date0.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/date0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parking/plts.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/plts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/grid_vertical.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/parking/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parking/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/service_sqlite.py" beforeDir="false" afterPath="$PROJECT_DIR$/parking/service_sqlite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parking/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qodana.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/目录结构图.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,40 +67,41 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Python.Main_Mysql.executor": "Run",
-    "Python.Main_sqlite.executor": "Run",
-    "Python.a_main.executor": "Run",
-    "Python.code(1).executor": "Run",
-    "Python.date.executor": "Run",
-    "Python.date0.executor": "Run",
-    "Python.plts.executor": "Run",
-    "Python.py_echarts.executor": "Debug",
-    "Python.test.executor": "Run",
-    "Python.wuqixinxi.executor": "Run",
-    "Python.停车场管理.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "ignore_missing_gitignore": "true",
-    "last_opened_file_path": "C:/ProgramData/anaconda3/envs/PYQT5/Scripts/pyuic5.exe",
-    "settings.editor.selected.configurable": "preferences.externalTools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Python.Main_Mysql.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main_sqlite.executor&quot;: &quot;Run&quot;,
+    &quot;Python.a_main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.code(1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.date.executor&quot;: &quot;Run&quot;,
+    &quot;Python.date0.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plts.executor&quot;: &quot;Run&quot;,
+    &quot;Python.py_echarts.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.wuqixinxi.executor&quot;: &quot;Run&quot;,
+    &quot;Python.停车场管理.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CCB/Code/Python/math&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CCB\Code\Python\Parking_System - QT5" />
       <recent name="D:\CCB\Code\Python\智能停车场数据管理系统\code" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CCB\Code\Python\Parking_System - QT5" />
       <recent name="D:\CCB\Code\Python\Parking_System - QT5\Visual" />
       <recent name="D:\CCB\Code\Python\智能停车场数据管理系统\UI" />
       <recent name="D:\CCB\Code\Python\智能停车场数据管理系统\img" />
       <recent name="D:\CCB\Code\Python\智能停车场数据管理系统\" />
-      <recent name="D:\CCB\Code\Python\智能停车场数据管理系统" />
     </key>
   </component>
   <component name="RunManager">
@@ -207,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717311352144</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1.0.1">
+      <option name="closed" value="true" />
+      <created>1717857715825</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717857715825</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,10 +240,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="1.0.1" />
     <MESSAGE value="1.0.2" />
     <MESSAGE value="1.0.3" />
     <MESSAGE value="1.0.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.0" />
+    <MESSAGE value="1.0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.1" />
   </component>
 </project>

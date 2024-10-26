@@ -1,9 +1,6 @@
 import pymysql # 导入操作MySQL数据库的模块
 userName="" # 记录用户名
 # 打开数据库连接
-def create_database_if_not_exists(cursor):
-    cursor.execute("CREATE DATABASE IF NOT EXISTS car")
-
 def open():
 
     db = pymysql.connect(
@@ -14,8 +11,6 @@ def open():
             charset="utf8"
         )  # 数据库连接
     return db  # 返回连接对象
-
-
 # 执行数据库的增、删、改操作
 def exec(sql,values):
     db = open() # 连接数据库
@@ -30,7 +25,6 @@ def exec(sql,values):
     finally:
         cursor.close() # 关闭游标
         db.close() # 关闭数据库连接
-
 # 带参数的精确查询
 def query(sql,*keys):
     db=open() # 连接数据库
@@ -40,7 +34,6 @@ def query(sql,*keys):
     cursor.close() # 关闭游标
     db.close() # 关闭数据库连接
     return result # 返回查询结果
-
 # 不带参数的模糊查询
 def query2(sql):
     db=open() # 连接数据库

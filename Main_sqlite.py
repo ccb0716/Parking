@@ -1,32 +1,39 @@
-from datetime import datetime
-
-
-import time
-
-from PyQt5 import QtWidgets
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem
-
-import parking.service_sqlite as service
-import sys
+import parking.service as service
+import sys,time,base64
 import img.background_rc
 
-import parking.date0 as date0
+from PyQt5 import QtWidgets
+from PyQt5.QtCore import QUrl, Qt
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem, QApplication
+
 from UI.loginpage import Ui_loginpage
 from UI.wuqixinxi import Ui_wuqixinxi
-from qframelesswindow import FramelessWindow
-from parking.plts import bing_tu_1,bing_tu,zhu_zhuangtu,fee_plt,shiduan,jiedai
+
+from parking.plts import bing_tu_1,bing_tu,zhu_zhuangtu,fee_plt,shiduan
+from datetime import datetime
+import parking.date0 as date0
+import parking.py_echarts as py_echarts
+
 # 有几个页面定义几个class!!!!!!
 class login_window(QtWidgets.QMainWindow, Ui_loginpage):  # 定义的loginpageh
     def __init__(self):
         super(login_window, self).__init__()
         self.setupUi(self)  # 创建窗体对象
         self.init()
-        self.VerificationCode = "92390"
 
     def init(self):
         self.denglu.clicked.connect(self.login_button)  # 连接槽..
-
+        self.zhuce1.clicked.connect(self.zhuce1_button)
+        self.zhuce_1.clicked.connect(self.zhuce_1_button)
+        self.back_login.clicked.connect(self.back_login_button)
+        self.shuaxin.clicked.connect(self.shuaxin_button)
+    def shuaxin_button(self):
+        global VerificationCode
+        VerificationCode=date0.generate_captcha_image()
+        pixmap = QPixmap(r"Visual/yanzhengma.png")  # 创建相应的QPixmap对象
+        self.yanzhengma.setScaledContents(True)  # 设置铺满
+        self.yanzhengma.setPixmap(pixmap)  # 显示lena图像
     def login_button(self):
         service.userName = self.username.text()  # 全局变量，记录用户名
         self.userPwd = self.password.text()  # 记录用户密码
@@ -36,25 +43,26 @@ class login_window(QtWidgets.QMainWindow, Ui_loginpage):  # 定义的loginpageh
         if self.password.text() == "":
             QMessageBox.warning(self, '警告', '密码不能为空，请输入！')
             return None
-        if self.lineEdit_3.text() == "":
+        if self.lineEdit_4.text() == "":
             QMessageBox.warning(self, '警告', '验证码不能为空，请输入！')
             return None
         if service.userName != "" and self.userPwd != "":  # 判断用户名和密码不为空
             # 根据用户名和密码查询数据
-            result = service.query("select * from id where name = ? and password= ?", service.userName,
+            result = service.query("select * from id where name = %s and password= %s", service.userName,
                                    self.userPwd)
-            if len(result) > 0 and self.lineEdit_3.text() == self.VerificationCode:  # 如果查询结果大于0，说明存在该用户，可以登录
-                ww.show()  # 显示主窗体
+            if len(result) > 0 and self.lineEdit_4.text() == VerificationCode:  # 如果查询结果大于0，说明存在该用户，可以登录
+
+                ww.show()  # 显示登录窗体
                 w.close()  # 隐藏当前的登录窗体
             elif len(result) == 0:
                 QMessageBox.critical(self, '错误', '账号或密码错误！')
                 self.username.clear()
                 self.password.clear()
-                self.lineEdit_3.clear()
+                self.lineEdit_4.clear()
                 return None
-            elif self.lineEdit_3.text() != self.VerificationCode:
+            elif self.lineEdit_4.text() != VerificationCode:
                 QMessageBox.critical(self, '错误', '验证码错误！')
-                self.lineEdit_3.clear()
+                self.lineEdit_4.clear()
                 return None
             else:
                 QMessageBox.critical(self, '错误', '错误！')
@@ -62,17 +70,64 @@ class login_window(QtWidgets.QMainWindow, Ui_loginpage):  # 定义的loginpageh
                 self.password.clear()
                 self.lineEdit_3.clear()
                 return None
+
+    def zhuce_1_button(self):
+        result= service.query("select * from pro_user where pas=%s ", self.pro_Password.text())
+
+        if self.new_username.text()=="" or self.new_Password.text()=="" or self.pro_Password.text()=="" or self.new_Password_1.text()=="":
+            QMessageBox.warning(self, '警告', '信息不能为空，请输入！')
+            return None
+        elif len(self.new_Password.text()) < 6:
+            QMessageBox.warning(self, '警告', '密码长度不能小于6位，请重新输入！')
+            return None
+        elif self.new_Password_1.text() != self.new_Password.text():
+            QMessageBox.warning(self, '警告', '两次密码不一致，请重新输入！')
+            return None
+        elif len(result)==0:
+            QMessageBox.warning(self, '警告', '管理员验证失败，请重新输入！')
+            self.pro_Password.clear()
+            return None
+        elif len(result)>0 :
+            result1 = service.query("select * from id where name = %s ",self.new_username.text())
+            if len(result1)>0:
+                QMessageBox.warning(self, '警告', '用户名已存在，请重新输入！')
+                self.new_username.clear()
+                return None
+            elif len(result1)==0:
+                service.exec("insert into id (name,password) values(%s,%s)",(self.new_username.text(),self.new_Password.text()))
+                QMessageBox.information(self, '提示', '注册成功！')
+    def zhuce1_button(self):
+        self.stackedWidget.setCurrentIndex(1)
+    def back_login_button(self):
+        self.stackedWidget.setCurrentIndex(0)
+
+
+
+
 class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
 
     def __init__(self):
         super(wuqixinxiwindow, self).__init__()
+
+        #self.showMaximized()
         self.setupUi(self)  # 创建窗体对象
         self.init()
-    def init(self):
+        #self.query()  # 窗体加载时显示所有数据
+
         self.wp_information_1.itemClicked.connect(self.getItem)  # 获取选中的单元格数据
         self.btnQuery.clicked.connect(self.query)  # 绑定刷新按钮的单击信号
         self.bindGrade()
         self.wp_Model()
+        # 绑定年级下拉列表
+        #self.cboxGrade.currentIndexChanged.connect(self.wp_Model)
+
+
+
+        # 根据年级绑定班级列表
+
+    def init(self):
+        self.query()  # 窗体加载时显示所有数据
+        self.query_1()
         self.zhgl.clicked.connect(self.zhgl_button)  # 连接槽
         self.wqtj.clicked.connect(self.wqtj_button)
         self.crkgl.clicked.connect(self.crkgl_button)
@@ -80,8 +135,7 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
         self.whby.clicked.connect(self.whby_button)
         self.qywqxx.clicked.connect(self.qywqxx_button)
         self.afgl.clicked.connect(self.afgl_button)
-        self.query()  # 窗体加载时显示所有数据
-        self.query_1()
+
         self.wp_information_1.itemClicked.connect(self.getItem)  # 获取选中的单元格数据
         self.genggai.clicked.connect(self.genggai_button)
         self.luru.clicked.connect(self.luru_button)
@@ -92,6 +146,7 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
         self.get_time.clicked.connect(self.get_time_button)
         self.get_time_1.clicked.connect(self.get_time_1_button)
         self.sel_car.clicked.connect(self.sel_car_button)
+
         self.shijian_fenbu_2.clicked.connect(self.shijian_fenbu_button)
         self.zhoufanmang_2.clicked.connect(self.zhoufanmang_button)
         self.fee_2.clicked.connect(self.fee_button)  # 绑定修改按钮的单击信号
@@ -99,47 +154,167 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
         self.jiedai.clicked.connect(self.jiedai_button)
         self.zonghe_2.clicked.connect(self.zonghe_button)
         self.zonghe_3.clicked.connect(self.zonghe_3_button)
+        self.ciyun.clicked.connect(self.ciyun_button)
+        self.shiduan.clicked.connect(self.shiduan_button)
+
+
 
     def shijian_fenbu_button(self):
-        self.stackedWidget_2.setCurrentIndex(0)
         zhu_zhuangtu()
-        pixmap = QPixmap(r"Visual/zhuzhuang_tu.png")  # 创建相应的QPixmap对象
-        self.shijian_fenbu.setScaledContents(True)  # 设置铺满
-        self.shijian_fenbu.setPixmap(pixmap)  # 显示lena图像
+        with open("Visual/zhuzhuang_tu.png", "rb") as f:
+            encoded_image = base64.b64encode(f.read()).decode()
+        html = f"""
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="UTF-8">
+            <title>Local Image</title>
+            <style>
+              img {{
+                width: 100%;
+                height: auto;
+              }}
+            </style>
+          </head>
+          <body>
+            <img id="myImage" src="data:image/png;base64,{encoded_image}">
+            <script>
+              function resizeImage() {{
+                var image = document.getElementById('myImage');
+                var container = image.parentElement;
+                image.style.width = container.clientWidth + 'px';
+              }}
+              window.onload = resizeImage;
+              window.onresize = resizeImage;
+            </script>
+          </body>
+        </html>
+        """
+        self.web.setHtml(html)
     def zhoufanmang_button(self):
-        self.stackedWidget_2.setCurrentIndex(1)
         bing_tu_1()
-
-        pixmap = QPixmap(r"Visual/bing_tu_2.png")  # 创建相应的QPixmap对象
-        self.zhoufanmang.setScaledContents(True)  # 设置铺满
-        self.zhoufanmang.setPixmap(pixmap)  # 显示lena图像
+        with open("Visual/bing_tu_2.png", "rb") as f:
+            encoded_image = base64.b64encode(f.read()).decode()
+        html = f"""
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="UTF-8">
+            <title>Local Image</title>
+            <style>
+              img {{
+                width: 100%;
+                height: auto;
+              }}
+            </style>
+          </head>
+          <body>
+            <img id="myImage" src="data:image/png;base64,{encoded_image}">
+            <script>
+              function resizeImage() {{
+                var image = document.getElementById('myImage');
+                var container = image.parentElement;
+                image.style.width = container.clientWidth + 'px';
+              }}
+              window.onload = resizeImage;
+              window.onresize = resizeImage;
+            </script>
+          </body>
+        </html>
+        """
+        self.web.setHtml(html)
     def fee_button(self):
-        self.stackedWidget_2.setCurrentIndex(2)
         fee_plt()
+        with open("Visual/fee.png", "rb") as f:
+            encoded_image = base64.b64encode(f.read()).decode()
+        html = f"""
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="UTF-8">
+            <title>Local Image</title>
+            <style>
+              img {{
+                width: 100%;
+                height: auto;
+              }}
+            </style>
+          </head>
+          <body>
+            <img id="myImage" src="data:image/png;base64,{encoded_image}">
+            <script>
+              function resizeImage() {{
+                var image = document.getElementById('myImage');
+                var container = image.parentElement;
+                image.style.width = container.clientWidth + 'px';
+              }}
+              window.onload = resizeImage;
+              window.onresize = resizeImage;
+            </script>
+          </body>
+        </html>
+        """
 
-        pixmap = QPixmap(r"Visual/fee.png")  # 创建相应的QPixmap对象
-        self.fee.setScaledContents(True)  # 设置铺满
-        self.fee.setPixmap(pixmap)  # 显示lena图像
+        self.web.setHtml(html)
+
     def gaofeng_button(self):
-        self.stackedWidget_2.setCurrentIndex(3)
         shiduan()
-        pixmap = QPixmap(r"Visual/shiduan.png")  # 创建相应的QPixmap对象
-        self.gaofeng.setScaledContents(True)
-        self.gaofeng.setPixmap(pixmap)
 
+        with open("Visual/shiduan.png", "rb") as f:
+            encoded_image = base64.b64encode(f.read()).decode()
+
+        html = f"""
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="UTF-8">
+            <title>Local Image</title>
+            <style>
+              img {{
+                width: 100%;
+                height: auto;
+              }}
+            </style>
+          </head>
+          <body>
+            <img id="myImage" src="data:image/png;base64,{encoded_image}">
+            <script>
+              function resizeImage() {{
+                var image = document.getElementById('myImage');
+                var container = image.parentElement;
+                image.style.width = container.clientWidth + 'px';
+              }}
+              window.onload = resizeImage;
+              window.onresize = resizeImage;
+            </script>
+          </body>
+        </html>
+        """
+
+        self.web.setHtml(html)
 
     def jiedai_button(self):
-        self.stackedWidget_2.setCurrentIndex(4)
-        jiedai()
 
-        pixmap = QPixmap(r"Visual/cc.png")  # 创建相应的QPixmap对象
-        self.jiedaitj.setScaledContents(True)  # 设置铺满
-        self.jiedaitj.setPixmap(pixmap)  # 显示lena图像
+        py_echarts.map_0()
+        self.web.load(QUrl.fromLocalFile("/Visual/jiedai.html"))
+    def ciyun_button(self):
+
+        py_echarts.ciyun()
+        self.web.load(QUrl.fromLocalFile("/Visual/ciyun.html"))
+    def shiduan_button(self):
+
+        py_echarts.shiduan1()
+        self.web.load(QUrl.fromLocalFile("/Visual/shiduan.html"))
     def zonghe_button(self):
-        self.stackedWidget_2.setCurrentIndex(5)
+
+        py_echarts.line_bar()
+
+        self.web.load(QUrl.fromLocalFile("/Visual/bar.html"))
 
     def zonghe_3_button(self):
-        self.stackedWidget_2.setCurrentIndex(6)
+
+        py_echarts.pie_web()
+        self.web.load(QUrl.fromLocalFile("/Visual/fee_web.html"))
 
     def get_time_button(self):
         self.in_time.setText(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
@@ -150,7 +325,7 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
         in_time =str(self. in_time.text())
         week_day=date0.get_weekday(in_time)
         Time_period=date0.get_timeperiod(in_time)
-        self.result1 = service.exec("insert into car (id, in_time,state,wel,Time_period) values (?, ?,?,?,?)",
+        self.result1 = service.exec("insert into car (id, in_time,state,wel,Time_period) values (%s, %s,%s,%s,%s)",
                                     (id, in_time,0,week_day,Time_period))
         if self.result1 > 0:  # 如果结果大于0，说明修改成功
             QMessageBox.information(self, '提示', '登记成功！')
@@ -164,7 +339,7 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
         elif self.id1=="" or self.out_time==""or len(self.id1)<=5:
             QMessageBox.information(self, '提示', '请检查输入！')
         elif self.id1!="" or self.out_time!="":
-            self.result=service.exec(" update car set out_time = ?, state = ? where id = ?",
+            self.result=service.exec(" update car set out_time = %s, state = %s where id = %s",
                                       (self.out_time, 1, self.id1))
             if len(self.result)>0:
                 QMessageBox.information(self, '提示', '登记成功！')
@@ -179,7 +354,7 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
             QMessageBox.information(self, '提示', 'id最少为五位')
         else:
             result = service.query(
-                "select id,in_time,state from car where id=? and state=? ",
+                "select id,in_time,state from car where id=%s and state=%s ",
                 id0, 0)
             if len(result)>0:
                 self.in_time_1.setText(str(result[0][1]))
@@ -195,10 +370,10 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
             return None
 
         elif self.name_1.text() == service.userName and self.ps_3 != "":
-            result = service.query("select * from id where name = ? and password= ?", service.userName,
+            result = service.query("select * from id where name = %s and password= %s", service.userName,
                                    self.ps_3.text())
             if len(result) > 0:
-                result1 = service.exec(" update id set name = ?, password = ? where name = ?",
+                result1 = service.exec(" update id set name = %s, password = %s where name = %s",
                                       (self.name_2.text(), self.ps_2.text(), self.name_1.text()))
                 if result1 > 0:  # 如果结果大于0，说明修改成功
                     QMessageBox.information(self, '提示', '信息修改成功！')
@@ -233,18 +408,21 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
     def wqtj_button(self):
 
         self.stackedWidget.setCurrentIndex(1)
-        result_0= service.query("select state from car where state=?",0)
-        c = 100
+        #self.widget.load(QUrl.fromLocalFile("/Visual/car_num.html"))
+        result_0= service.query("select state from car where state=%s",0)
+        c = 200
         b = c - len(result_0)
         a = len(result_0)
         self.SubtitleLabel.setText("总车位：" + str(c))
         self.SubtitleLabel_4.setText("占用车位："+str(a))
         self.bq.setText("剩余车位：" + str(b))
         bing_tu(["占用车位", "剩余车位"], [a, b], ['gold', 'lightskyblue'])
-        self.ImageLabel.setPixmap(QPixmap(""))
-        pixmap = QPixmap(r"Visual/bing_tu.png")  # 创建相应的QPixmap对象
-        self.ImageLabel.setScaledContents(True)  # 设置铺满
-        self.ImageLabel.setPixmap(pixmap)
+        py_echarts.car_use()
+        self.widget_21.load(QUrl.fromLocalFile("/Visual/liquid.html"))
+        #self.ImageLabel.setPixmap(QPixmap(""))
+        #pixmap = QPixmap(r"Visual/bing_tu.png")  # 创建相应的QPixmap对象
+        #self.ImageLabel.setScaledContents(True)  # 设置铺满
+        #self.ImageLabel.setPixmap(pixmap)
     def crkgl_button(self):
         self.stackedWidget.setCurrentIndex(2)
     def qzxx_button(self):
@@ -252,7 +430,9 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
         self.query()
     def whby_button(self):
         self.stackedWidget.setCurrentIndex(4)
-        self.query_1()
+        py_echarts.map_0()
+        self.web.load(QUrl.fromLocalFile("/Visual/jiedai.html"))
+
     def qywqxx_button(self):
         self.stackedWidget.setCurrentIndex(5)
     def afgl_button(self):
@@ -264,20 +444,20 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
         cname = self.cboxGrade.currentText()  # 记录选择的型号
         if cname == "所有"and gname != "所有":
             result = service.query(
-                "select id,in_time,out_time,Time_period,time,wel ,fee from car where Time_period=? and state=? ",
+                "select id,in_time,out_time,Time_period,time,wel ,fee from car where Time_period=%s and state=%s ",
                 gname,1)
             # 获取指定枪支信息
         elif cname != "所有" and gname == "所有":
             result = service.query(
-                "select id,in_time,out_time,Time_period,time,wel ,fee from car where wel=? and state=?",
+                "select id,in_time,out_time,Time_period,time,wel ,fee from car where wel=%s and state=%s",
                 cname,1)
         elif cname != "所有" and gname != "所有":
             result = service.query(
-                "select id,in_time,out_time,Time_period,time,wel ,fee from car where wel=? and Time_period=? and state=?",
+                "select id,in_time,out_time,Time_period,time,wel ,fee from car where wel=%s and Time_period=%s and state=%s",
                 cname, gname,1)
         elif cname == "所有"and gname == "所有":
             result = service.query(
-                "select id,in_time,out_time,Time_period,time,wel ,fee from car where state=?",1)
+                "select id,in_time,out_time,Time_period,time,wel ,fee from car where state=%s",1)
         row = len(result)
         self.wp_information_1.setRowCount(row)  # 设置表格行数
         self.wp_information_1.setColumnCount(7)  # 设置表格列数
@@ -296,36 +476,35 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
     def query_1(self):
 
         self.TableWidget_3.setRowCount(0)  # 清空表格中的所有行
-        self.id = self.locationID.text()  # 记录选择的大类
-        if self.id != "":
+        id = self.locationID.text()  # 记录选择的大类
+        if id != "":
 
             result2 = service.query(
-                "select id,in_time,Time_period,time,wel ,fee from car where state=? and id=? ",
+                "select id,in_time,Time_period,time,wel ,fee from car where state=%s and id=%s ",
                 0,id)
         else:
             result2 = service.query(
-                "select id,in_time,Time_period,time,wel ,fee from car where state=? ",0)
+                "select id,in_time,Time_period,time,wel ,fee from car where state=%s ",0)
 
         row = len(result2)
         for i in range(row):  # 遍历行
             for j in range(6):  # 遍历列
                 if j==3:
                     date_string = result2[i][1]
-                    date_obj = datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S")
                     now_time = datetime.now()
-                    self.time_0 = now_time - date_obj
+                    self.time_0 = now_time - date_string
                     fee=3*(self.time_0.seconds // 3600+1)#一个小时3块
                     self.result1 = service.exec(
-                        "update car set time=? , fee=? where state = ? and id = ?",
-                        (str(self.time_0),fee, 0,str(result2[i][0])))
-        if self.id != "":
+                        "update car set time=%s , fee=%s where state = %s and id = %s",
+                        (self.time_0,fee, 0,result2[i][0]))
+        if id != "":
 
             result = service.query(
-                        "select id,in_time,Time_period,time,wel ,fee from car where state=? and id=? ",
+                        "select id,in_time,Time_period,time,wel ,fee from car where state=%s and id=%s ",
                         0, id)
         else:
             result = service.query(
-                        "select id,in_time,Time_period,time,wel ,fee from car where state=? ", 0)
+                        "select id,in_time,Time_period,time,wel ,fee from car where state=%s ", 0)
 
         row = len(result)
         self.TableWidget_3.setRowCount(row)  # 设置表格行数
@@ -354,7 +533,7 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
             self.cboxClass.clear()  # 清空列表
             self.cboxClass.addItem("所有")  # 增加首选项
             result = service.query("select Time_period from car ")
-            #result = service.query("select Time_period from car_num where we_day=?",
+            #result = service.query("select Time_period from car_num where we_day=%s",
             #                      self.cboxGrade.currentText())
             class_2 = list(set(result))
             for i in class_2:  # 遍历查询结果
@@ -368,7 +547,7 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
         if item.column() == 0:  # 如果单击的是第一列
             self.select = item.text()  # 获取单击的单元格文本
             self.editID.setText(self.select)
-            result = service.query("select * from car where id=?",
+            result = service.query("select * from car where id=%s",
                                    self.select)
             self.editName.setText(str(result[0][1]))
             self.editAge.setText(str(result[0][2]))
@@ -384,7 +563,7 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
             new_wek = self.editAddress.text()
             new_in_time = self.editName.text()
             result = service.exec(
-                "update car set wel = ?, in_time = ?, out_time = ?, Time_period = ? where id = ?",
+                "update car set wel = %s, in_time = %s, out_time = %s, Time_period = %s where id = %s",
                 (new_wek, new_in_time, new_out_time, new_period, self.editID.text()))
             if result > 0:  # 如果结果大于0，说明修改成功
                 self.query()  # 在表格中显示最新数据
@@ -394,11 +573,13 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
             QMessageBox.warning(self, '警告', '修改失败！')
 
 
-
 if __name__ == '__main__':
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
     app = QtWidgets.QApplication(sys.argv)
     w = login_window()
     ww = wuqixinxiwindow()
-    ww.show()
-
+    ww.setWindowState(Qt.WindowMaximized)
+    w.show()
     sys.exit(app.exec_())
+

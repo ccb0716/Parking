@@ -7,11 +7,11 @@
 
 </head>
 <body >
-    <div id="6e11daaacd694a879097be5fe45bbc4b" class="chart-container" style="width:100%; height:550px; "></div>
+    <div id="1d306f4794ff487d8c7583a3273507a8" class="chart-container" style="width:100%; height:550px; "></div>
     <script>
-        var chart_6e11daaacd694a879097be5fe45bbc4b = echarts.init(
-            document.getElementById('6e11daaacd694a879097be5fe45bbc4b'), 'light', {renderer: 'canvas'});
-        var option_6e11daaacd694a879097be5fe45bbc4b = {
+        var chart_1d306f4794ff487d8c7583a3273507a8 = echarts.init(
+            document.getElementById('1d306f4794ff487d8c7583a3273507a8'), 'light', {renderer: 'canvas'});
+        var option_1d306f4794ff487d8c7583a3273507a8 = {
     "backgroundColor": "transparent",
     "animation": true,
     "animationThreshold": 2000,
@@ -35,6 +35,7 @@
             "smooth": false,
             "clip": true,
             "step": false,
+            "stackStrategy": "samesign",
             "data": [
                 [
                     "2020-01",
@@ -251,6 +252,10 @@
                 [
                     "2024-06",
                     684
+                ],
+                [
+                    "2024-10",
+                    null
                 ]
             ],
             "hoverAnimation": true,
@@ -269,13 +274,6 @@
             },
             "areaStyle": {
                 "opacity": 0.5
-            },
-            "zlevel": 0,
-            "z": 0,
-            "axisLine": {
-                "show": true,
-                "onZero": true,
-                "onZeroAxisIndex": 0
             },
             "markArea": {
                 "silent": false,
@@ -302,6 +300,13 @@
                         }
                     ]
                 ]
+            },
+            "zlevel": 0,
+            "z": 0,
+            "axisLine": {
+                "show": true,
+                "onZero": true,
+                "onZeroAxisIndex": 0
             },
             "rippleEffect": {
                 "show": true,
@@ -438,7 +443,8 @@
                 "2024-03",
                 "2024-04",
                 "2024-05",
-                "2024-06"
+                "2024-06",
+                "2024-10"
             ]
         }
     ],
@@ -594,13 +600,18 @@
             "orient": "horizontal",
             "zoomLock": false,
             "top": "50px",
-            "filterMode": "filter"
+            "filterMode": "filter",
+            "disabled": false,
+            "zoomOnMouseWheel": true,
+            "moveOnMouseMove": true,
+            "moveOnMouseWheel": true,
+            "preventDefaultMouseMove": true
         }
     ]
 };
-        chart_6e11daaacd694a879097be5fe45bbc4b.setOption(option_6e11daaacd694a879097be5fe45bbc4b);
+        chart_1d306f4794ff487d8c7583a3273507a8.setOption(option_1d306f4794ff487d8c7583a3273507a8);
             window.addEventListener('resize', function(){
-                chart_6e11daaacd694a879097be5fe45bbc4b.resize();
+                chart_1d306f4794ff487d8c7583a3273507a8.resize();
             })
     </script>
 </body>

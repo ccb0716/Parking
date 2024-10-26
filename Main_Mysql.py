@@ -1,19 +1,19 @@
 import parking.service as service
-import sys
-import time
+import sys,time,base64
 import img.background_rc
-from datetime import datetime
 
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QUrl, Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem, QApplication
 
-import parking.date0 as date0
-import parking.py_echarts as py_echarts
 from UI.loginpage import Ui_loginpage
 from UI.wuqixinxi import Ui_wuqixinxi
+
 from parking.plts import bing_tu_1,bing_tu,zhu_zhuangtu,fee_plt,shiduan
+from datetime import datetime
+import parking.date0 as date0
+import parking.py_echarts as py_echarts
 
 # 有几个页面定义几个class!!!!!!
 class login_window(QtWidgets.QMainWindow, Ui_loginpage):  # 定义的loginpageh
@@ -83,14 +83,19 @@ class login_window(QtWidgets.QMainWindow, Ui_loginpage):  # 定义的loginpageh
         elif self.new_Password_1.text() != self.new_Password.text():
             QMessageBox.warning(self, '警告', '两次密码不一致，请重新输入！')
             return None
-
         elif len(result)==0:
-            QMessageBox.warning(self, '警告', '验证失败，请重新输入！')
+            QMessageBox.warning(self, '警告', '管理员验证失败，请重新输入！')
             self.pro_Password.clear()
             return None
         elif len(result)>0 :
-            service.exec("insert into id (name,password) values(%s,%s)",(self.new_username.text(),self.new_Password.text()))
-            QMessageBox.information(self, '提示', '注册成功！')
+            result1 = service.query("select * from id where name = %s ",self.new_username.text())
+            if len(result1)>0:
+                QMessageBox.warning(self, '警告', '用户名已存在，请重新输入！')
+                self.new_username.clear()
+                return None
+            elif len(result1)==0:
+                service.exec("insert into id (name,password) values(%s,%s)",(self.new_username.text(),self.new_Password.text()))
+                QMessageBox.information(self, '提示', '注册成功！')
     def zhuce1_button(self):
         self.stackedWidget.setCurrentIndex(1)
     def back_login_button(self):
@@ -155,28 +160,106 @@ class wuqixinxiwindow(QtWidgets.QMainWindow, Ui_wuqixinxi):
 
 
     def shijian_fenbu_button(self):
-        self.stackedWidget_2.setCurrentIndex(0)
         zhu_zhuangtu()
-        pixmap = QPixmap(r"Visual/zhuzhuang_tu.png")  # 创建相应的QPixmap对象
-        self.shijian_fenbu.setScaledContents(True)  # 设置铺满
-        self.shijian_fenbu.setPixmap(pixmap)  # 显示lena图像
+        with open("Visual/zhuzhuang_tu.png", "rb") as f:
+            encoded_image = base64.b64encode(f.read()).decode()
+        html = f"""
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="UTF-8">
+            <title>Local Image</title>
+            <style>
+              img {{
+                width: 100%;
+                height: auto;
+              }}
+            </style>
+          </head>
+          <body>
+            <img id="myImage" src="data:image/png;base64,{encoded_image}">
+            <script>
+              function resizeImage() {{
+                var image = document.getElementById('myImage');
+                var container = image.parentElement;
+                image.style.width = container.clientWidth + 'px';
+              }}
+              window.onload = resizeImage;
+              window.onresize = resizeImage;
+            </script>
+          </body>
+        </html>
+        """
+        self.web.setHtml(html)
     def zhoufanmang_button(self):
-        self.stackedWidget_2.setCurrentIndex(1)
         bing_tu_1()
-
-        pixmap = QPixmap(r"Visual/bing_tu_2.png")  # 创建相应的QPixmap对象
-        self.zhoufanmang.setScaledContents(True)  # 设置铺满
-        self.zhoufanmang.setPixmap(pixmap)  # 显示lena图像
+        with open("Visual/bing_tu_2.png", "rb") as f:
+            encoded_image = base64.b64encode(f.read()).decode()
+        html = f"""
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="UTF-8">
+            <title>Local Image</title>
+            <style>
+              img {{
+                width: 100%;
+                height: auto;
+              }}
+            </style>
+          </head>
+          <body>
+            <img id="myImage" src="data:image/png;base64,{encoded_image}">
+            <script>
+              function resizeImage() {{
+                var image = document.getElementById('myImage');
+                var container = image.parentElement;
+                image.style.width = container.clientWidth + 'px';
+              }}
+              window.onload = resizeImage;
+              window.onresize = resizeImage;
+            </script>
+          </body>
+        </html>
+        """
+        self.web.setHtml(html)
     def fee_button(self):
-        self.stackedWidget_2.setCurrentIndex(2)
         fee_plt()
+        with open("Visual/fee.png", "rb") as f:
+            encoded_image = base64.b64encode(f.read()).decode()
+        html = f"""
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="UTF-8">
+            <title>Local Image</title>
+            <style>
+              img {{
+                width: 100%;
+                height: auto;
+              }}
+            </style>
+          </head>
+          <body>
+            <img id="myImage" src="data:image/png;base64,{encoded_image}">
+            <script>
+              function resizeImage() {{
+                var image = document.getElementById('myImage');
+                var container = image.parentElement;
+                image.style.width = container.clientWidth + 'px';
+              }}
+              window.onload = resizeImage;
+              window.onresize = resizeImage;
+            </script>
+          </body>
+        </html>
+        """
 
-        pixmap = QPixmap(r"Visual/fee.png")  # 创建相应的QPixmap对象
-        self.fee.setScaledContents(True)  # 设置铺满
-        self.fee.setPixmap(pixmap)  # 显示lena图像
+        self.web.setHtml(html)
+
     def gaofeng_button(self):
         shiduan()
-        import base64
+
         with open("Visual/shiduan.png", "rb") as f:
             encoded_image = base64.b64encode(f.read()).decode()
 
